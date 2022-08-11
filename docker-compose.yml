@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  web:
+    container_name: php_kinopoisk
+    env_file:
+      - .env
+    build:
+      context: ./
+      dockerfile: ./docker/web/Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/php-parsers
